@@ -1,14 +1,8 @@
 # 🔒 Authentication - Clerk
 
-T4 uses [networkless token verification](https://clerk.com/docs/reference/node/networkless-token-verification) to verify the identity of the user.
+T4 uses ...
 
 ## 🔭 Overview
-
-Networkless token verification is a method used to authenticate and verify
-the identity of a user without relying on network connectivity. This method was
-chosen because it enables near zero latency overhead for authentication checks on the server.
-
-The Cloudflare Workers API server indeed uses the Clerk service for user authentication. However, it does not directly call the Clerk's API as you might expect. Instead, it uses the `@tsndr/cloudflare-worker-jwt` library to verify the JWT (JSON Web Token) that is issued by Clerk when a user logs in.
 
 ## 🌊 Here's a brief overview of the flow:
 
