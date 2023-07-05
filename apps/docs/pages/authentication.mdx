@@ -4,22 +4,6 @@ T4 uses [Supabase](https://supabase.com/docs/guides/auth) for authentication
 
 ## 🔭 Overview
 
-## 🌊 Here's a brief overview of the flow:
-
-1. A user logs in using Clerk and receives a JWT.
-
-2. When the user makes a request to the Cloudflare Workers server, this JWT is sent along in the Authorization header.
-
-3. The `@tsndr/cloudflare-worker-jwt` library on the server extracts and verifies the token, ensuring that it is correctly signed and hasn't expired.
-
-4. If the token is valid, the request proceeds; otherwise, it is rejected.
-
-# 🔒 Authentication - Supabase
-
-Another version of T4 uses [Supabase](https://supabase.com/docs/guides/auth) for authentication.
-
-## 🔭 Overview
-
 The authentication flow in T4 involves the following steps:
 
 1. User Registration: Users can register their accounts using Supabase's email authentication
@@ -34,7 +18,7 @@ The authentication flow in T4 involves the following steps:
 
 4. Password Recovery: If users forget their password, they can initiate a
    password recovery process. Supabase will send them an email with
-   instructions on how to reset their password. (Note: to be implemented)
+   instructions on how to reset their password.
 
 JSON Web Tokens (JWT): Once a user is authenticated, T4 utilizes JSON Web Tokens (JWT)
 to manage and maintain user sessions. The JWT contains encoded information about the
