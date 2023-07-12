@@ -1,24 +1,27 @@
 import { type inferAsyncReturnType } from '@trpc/server'
 import { type FetchCreateContextFnOptions } from '@trpc/server/adapters/fetch'
-import { DrizzleD1Database } from 'drizzle-orm/d1'
-import { createDb } from './db/client'
+import { type SupabaseClient, createClient } from '@supabase/supabase-js'
+import { type Database } from '@t4/supabase'
 import jwt from '@tsndr/cloudflare-worker-jwt'
 
 interface User {
   id: string
+  supabase: SupabaseClient<Database>
 }
 
 interface ApiContextProps {
   user: User | null
-  db: DrizzleD1Database
+  supabaseAdmin: SupabaseClient<Database>
 }
 
 export const createContext = async (
-  d1: D1Database,
+  SUPABASE_URL: string,
+  SUPABASE_SECRET_KEY: string,
   JWT_VERIFICATION_KEY: string,
   opts: FetchCreateContextFnOptions
 ): Promise<ApiContextProps> => {
-  const db = createDb(d1)
+  // Create a Supabase client using SUPABASE_URL and SUPABASE_SECRET_KEY
+  const supabaseAdmin = createClient<Database>(SUPABASE_URL, SUPABASE_SECRET_KEY)
 
   async function getUser() {
     const sessionToken = opts.req.headers.get('authorization')?.split(' ')[1]
@@ -49,8 +52,11 @@ export const createContext = async (
         const userId = decodedToken?.payload?.sub
 
         if (userId) {
+          // Create a Supabase client using SUPABASE_URL and the user's JWT
+          const supabase = createClient<Database>(SUPABASE_URL, sessionToken)
           return {
             id: userId,
+            supabase,
           }
         }
       } catch (e) {
@@ -63,7 +69,7 @@ export const createContext = async (
 
   const user = await getUser()
 
-  return { user, db }
+  return { user, supabaseAdmin }
 }
 
 export type Context = inferAsyncReturnType<typeof createContext>

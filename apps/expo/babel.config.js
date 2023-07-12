@@ -21,7 +21,8 @@ module.exports = function (api) {
           alias: {
             // define aliases to shorten the import paths
             app: '../../packages/app',
-            '@t4/ui': '../../packages/ui',
+            '@t4/ui': '../../packages/ui', // TODO: remove @t4/ prefix from all packages
+            '@t4/supabase': '../../packages/supabase',
           },
           extensions: ['.js', '.jsx', '.tsx', '.ios.js', '.android.js'],
         },

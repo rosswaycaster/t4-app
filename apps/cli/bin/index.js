@@ -56,35 +56,21 @@ const setup = (folderName) => {
 
           installSpinner.succeed()
 
-          const drizzleSpinner = ora(chalk.green.bold(`Generating Drizzle client`)).start()
-
-          exec(`cd ${folderName} && yarn generate`, (drizzleErr) => {
-            if (drizzleErr) {
-              drizzleSpinner.fail()
-              console.error(
-                chalk.red.bold(`Failed to generate Drizzle client: ${drizzleErr.message}`)
-              )
-              return
-            }
-
-            drizzleSpinner.succeed()
-
-            console.log(
-              chalk.yellow(
-                `\n🚧 Remember to set up your environment variables properly by:\n1. Duplicating the .env.example file, renaming it to .env.local, and entering your variables.\n2. Duplicating /packages/api/.dev.vars.example, removing .example, and entering your ${
-                  withSupabase ? 'Supabase' : 'Clerk'
-                } JWT_VERIFICATION_KEY.\n3. Configure Cloudflare Wrangler configs inside /apps/next/wrangler.toml and /packages/api/wrangler.toml to match your deployment environment.`
-              )
+          console.log(
+            chalk.yellow(
+              `\n🚧 Remember to set up your environment variables properly by:\n1. Duplicating the .env.example file, renaming it to .env.local, and entering your variables.\n2. Duplicating /packages/api/.dev.vars.example, removing .example, and entering your ${
+                withSupabase ? 'Supabase' : 'Clerk'
+              } JWT_VERIFICATION_KEY.\n3. Configure Cloudflare Wrangler configs inside /apps/next/wrangler.toml and /packages/api/wrangler.toml to match your deployment environment.`
             )
+          )
 
-            console.log(
-              chalk.green.bold(
-                "🚀 Successfully created t4 project! After having filled out your .env, run 'cd packages/api && yarn migrate:local' to create your database tables. Run 'yarn api' and 'yarn web' in separate terminal tabs to start the api and web development servers."
-              )
+          console.log(
+            chalk.green.bold(
+              "🚀 Successfully created t4 project! After having filled out your .env, run 'cd packages/api && yarn migrate:local' to create your database tables. Run 'yarn api' and 'yarn web' in separate terminal tabs to start the api and web development servers."
             )
+          )
 
-            rl.close()
-          })
+          rl.close()
         })
       }
     )

@@ -1,0 +1,9 @@
+{
+  "name": "@t4/supabase",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "generate": "npx supabase gen types typescript --project-id REPLACE_WITH_PROJECT_REF_ID --schema public > types.ts"
+  }
+}

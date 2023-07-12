@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "@shopify/flash-list": "^1.4.3",
+    "@t4/supabase": "*",
     "@t4/ui": "*",
     "@tamagui/animations-react-native": "latest",
     "@tamagui/colors": "latest",

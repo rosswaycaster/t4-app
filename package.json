@@ -8,17 +8,17 @@
     "packages/*"
   ],
   "scripts": {
-    "api": "NO_D1_WARNING=true && cd packages/api && yarn dev",
+    "api": "cd packages/api && yarn dev",
     "native": "cd apps/expo && yarn start",
     "web": "cd apps/next && yarn dev",
     "build": "cd packages/ui && yarn build",
-    "generate": "cd packages/api && yarn generate",
+    "generate": "cd packages/supabase && yarn generate",
     "upgrade:tamagui": "yarn up '*tamagui*'@latest '@tamagui/*'@latest react-native-web-lite@latest",
     "check-deps": "check-dependency-version-consistency .",
     "check-types": "tsc --noEmit",
     "fix": "manypkg fix",
     "preinstall": "yarn set version 3.5.0",
-    "postinstall": "yarn build"
+    "postinstall": "yarn generate && yarn build"
   },
   "resolutions": {
     "@types/react-native": "^0.71.3",

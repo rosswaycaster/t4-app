@@ -5,7 +5,8 @@ import { createContext } from './context'
 import { trpcServer } from '@hono/trpc-server'
 
 type Bindings = {
-  DB: D1Database
+  SUPABASE_URL: string
+  SUPABASE_SECRET_KEY: string
   JWT_VERIFICATION_KEY: string
   APP_URL: string
 }
@@ -28,7 +29,12 @@ app.use('/trpc/*', async (c, next) => {
   return await trpcServer({
     router: appRouter,
     createContext: async (opts) => {
-      return await createContext(c.env.DB, c.env.JWT_VERIFICATION_KEY, opts)
+      return await createContext(
+        c.env.SUPABASE_URL,
+        c.env.SUPABASE_SECRET_KEY,
+        c.env.JWT_VERIFICATION_KEY,
+        opts
+      )
     },
   })(c, next)
 })

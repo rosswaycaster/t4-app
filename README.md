@@ -34,7 +34,7 @@
 
 The T4 Stack is a universal web and native stack made by [Tim Miller](https://twitter.com/ogtimothymiller) focused on **developer experience**, **rapid development**, and **performance**.
 
-Easy integration with **Cloudflare** services, such as R2 & D1 enable developers to build apps with **AI-powered features** at a **lower cost** compared to AWS.
+Easy integration with **Cloudflare** services that allow developers to build apps with **cutting edge features** at a **lower cost** compared to AWS or Vercel.
 
 👉 Further documentation can be found on the [T4 Stack website](https://t4stack.com). 👈
 
@@ -80,9 +80,6 @@ Easy integration with **Cloudflare** services, such as R2 & D1 enable developers
 
 - 🔥 [Hono](https://hono.dev)
 - 💚 [Cloudflare Workers](https://workers.cloudflare.com)
-- 📁 [Cloudflare D1](https://developers.cloudflare.com/d1)
-  - [SQLite](https://sqlite.org) database for the edge
-- 🗄️ [Drizzle](https://orm.drizzle.team)
 
 ### 🔒 Authentication
 
@@ -214,7 +211,6 @@ We welcome contributions from anyone and everyone. Please read our [contributing
 
 - [Cloudflare Developers](https://twitter.com/CloudflareDev)
 - [Shopify Developers](https://twitter.com/ShopifyDevs)
-- [Drizzle Developers](https://twitter.com/DrizzleOrm)
 - [Yusuke Wada](https://twitter.com/yusukebe) - Creator of Hono.js
 - [Tanner Linsley](https://twitter.com/tannerlinsley) - Creator of TanStack
 - [Nate Birdman](https://twitter.com/natebirdman) - Creator of Tamagui

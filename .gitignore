@@ -51,7 +51,7 @@ THUMBS_DB
 node_modules/
 types/
 
-# Cloudflare D1
+# Cloudflare
 **/.wrangler/*
 **/.dev.vars
 .turbo
