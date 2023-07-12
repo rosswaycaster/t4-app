@@ -6601,19 +6601,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/vscode@npm:^1.74.0":
+  version: 1.80.0
+  resolution: "@types/vscode@npm:1.80.0"
+  checksum: 442c55fb83151d36aa30c895dacb3f2320a7a7a1c8d956f1f1902618b6f3cddec070a88e494fe7e6db4aec481e9f44d4df0077d2598edb815ebffb6e7ea0e176
+  languageName: node
+  linkType: hard
+
 "@types/websocket@npm:^1.0.3":
   version: 1.0.5
   resolution: "@types/websocket@npm:1.0.5"
   dependencies:
     "@types/node": "*"
   checksum: 41c7a620f877a0165ff36e713455d888b7f5df9c51e71b5d0f47994f98cf22ccd339b8c6cfdc6bb417e950d40f405693974d393bd916971490553cc5e9e67a9d
-  languageName: node
-  linkType: hard
-
-"@types/vscode@npm:^1.74.0":
-  version: 1.80.0
-  resolution: "@types/vscode@npm:1.80.0"
-  checksum: 442c55fb83151d36aa30c895dacb3f2320a7a7a1c8d956f1f1902618b6f3cddec070a88e494fe7e6db4aec481e9f44d4df0077d2598edb815ebffb6e7ea0e176
   languageName: node
   linkType: hard
 
